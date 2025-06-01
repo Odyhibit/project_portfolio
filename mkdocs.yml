@@ -1,0 +1,9 @@
+site_name: Josh’s Projects & Blog
+site_url: https://www.yourdomain.com    # adjust later
+theme:
+  name: material
+  # You can add extra Material tweaks here (palette, font, icons, etc.)
+nav:
+  - Home: index.md
+  - Projects:
+      - ASCII→Bitmap: posts/ascii‐to‐bitmap.md
