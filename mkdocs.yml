@@ -1,4 +1,4 @@
-site_name: Josh’s Projects & Blog
+site_name: Josh's Projects & Blog
 site_url: https://odyhibit.github.io/    # adjust later
 theme:
   name: material
@@ -6,5 +6,5 @@ theme:
 nav:
   - Home: index.md
   - Projects:
-      - ASCII→Bitmap: posts/ascii‐to‐bitmap/index.md
+      - ASCII→Bitmap: posts/ascii-to-bitmap/index.md
       - Any-bits-you-want-stego: posts/any-bits-you-want-stego/index.md
