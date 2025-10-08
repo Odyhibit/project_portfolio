@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://odyhibit.github.io/posts/ascii-to-bitmap/">
+        <link rel="canonical" href="https://odyhibit.github.io/posts/any-bits-you-want-stego/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>How I Built My ASCII‐to‐Bitmapped‐Font Converter - Josh’s Projects & Blog</title>
+        <title>You pick the bits, I hide the file - Josh’s Projects & Blog</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-i-built-my-asciitobitmappedfont-converter" class="md-skip">
+        <a href="#you-pick-the-bits-i-hide-the-file" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How I Built My ASCII‐to‐Bitmapped‐Font Converter
+              You pick the bits, I hide the file
             
           </span>
         </div>
@@ -332,33 +332,11 @@
 
 
 
-<h1 id="how-i-built-my-asciitobitmappedfont-converter">How I Built My ASCII‐to‐Bitmapped‐Font Converter</h1>
-<p><strong>Date</strong>: 2025‐05‐07</p>
+<h1 id="you-pick-the-bits-i-hide-the-file">You pick the bits, I hide the file</h1>
+<p><strong>Date</strong>: 2025‐05‐14</p>
 <p><strong>Problem</strong><br />
-I frequently need a quick way to see a hexadecimal representation of a 1‐bit image, especially when experimenting with bit‐level steganography. Manually converting ASCII to a 5×7 or 8×8 dot matrix in hex was tedious.</p>
-<p><strong>Solution</strong><br />
-I wrote a Python script that:
-1. Takes any ASCII string, 
-2. Uses a custom 5×7 bitmapped font,
-3. Renders each character into a binary matrix,
-4. Concatenates rows into bytes, and
-5. Outputs a hex string (or Base64) that can be embedded in web demos.</p>
-<pre><code class="language-python"># Example snippet from `hex_string_to_bit_matrix`
-def hex_string_to_bit_matrix(hex_string: str) -&gt; list[list[str]]:
-    bytes_data = bytes.fromhex(hex_string)
-    bit_matrix = []
-    for byte in bytes_data:
-        bits = list(f&quot;{byte:08b}&quot;)
-        bit_matrix.append(bits)
-    return bit_matrix
-</code></pre>
-<h1 id="result">Result</h1>
-<ul>
-<li>This is a custom bitmap font representation of the input text.</li>
-<li>Use this to create/decode messages for CTF like chanllenges.</li>
-<li>You can set the output to base64 if that is more convienient.</li>
-<li>Full source is on GitHub.</li>
-</ul>
+While playing around with some steganography scripts, I found myself wanting to see things like how many bits I needed to change before the change was apparent. I also wanted to see how much stuff I could put in an image if we discard the idea of it being noticable. I put the whole text of "Moby Dick" in a screenshot. I wanted to see what it would look like to use the most significant bits instead of the least, it was a funny thought that some programmer could get his right and left mixed up.</p>
+<p><strong>Solution</strong>  </p>
 <p>Thanks
    — Josh</p>
 
