@@ -7,13 +7,14 @@ I frequently need a quick way to see a hexadecimal representation of a 1‐bit i
 
 **Solution**  
 I wrote a Python script that:
-1. Takes any ASCII string, 
-2. Uses a custom 5×7 bitmapped font,
-3. Renders each character into a binary matrix,
-4. Concatenates rows into bytes, and
-5. Outputs a hex string (or Base64) that can be embedded in web demos.
 
-```python
+1. Takes any ASCII string
+2. Uses a custom 5×7 bitmapped font
+3. Renders each character into a binary matrix
+4. Concatenates rows into bytes
+5. Outputs a hex string (or Base64) that can be embedded in web demos
+
+```python title="hex_string_to_bit_matrix()" linenums="1"
 # Example snippet from `hex_string_to_bit_matrix`
 def hex_string_to_bit_matrix(hex_string: str) -> list[list[str]]:
     bytes_data = bytes.fromhex(hex_string)

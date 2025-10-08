@@ -2,7 +2,20 @@ site_name: Josh's Projects & Blog
 site_url: https://odyhibit.github.io/    # adjust later
 theme:
   name: material
-  # You can add extra Material tweaks here (palette, font, icons, etc.)
+  features:
+    - content.code.copy
+    - content.code.select
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      pygments_lang_class: true
 nav:
   - Home: index.md
   - Projects:
