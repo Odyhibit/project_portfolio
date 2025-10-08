@@ -348,27 +348,36 @@
 
 
 
-<h1 id="how-i-built-my-asciitobitmappedfont-converter">How I Built My ASCII‐to‐Bitmapped‐Font Converter</h1>
+<h1 id="how-i-built-my-asciitobitmappedfont-converter">How I Built My ASCII‐to‐Bitmapped‐Font Converter<a class="headerlink" href="#how-i-built-my-asciitobitmappedfont-converter" title="Permanent link">&para;</a></h1>
 <p><strong>Date</strong>: 2025‐05‐07</p>
 <p><strong>Problem</strong><br />
 I frequently need a quick way to see a hexadecimal representation of a 1‐bit image, especially when experimenting with bit‐level steganography. Manually converting ASCII to a 5×7 or 8×8 dot matrix in hex was tedious.</p>
 <p><strong>Solution</strong><br />
-I wrote a Python script that:
-1. Takes any ASCII string, 
-2. Uses a custom 5×7 bitmapped font,
-3. Renders each character into a binary matrix,
-4. Concatenates rows into bytes, and
-5. Outputs a hex string (or Base64) that can be embedded in web demos.</p>
-<pre><code class="language-python"># Example snippet from `hex_string_to_bit_matrix`
-def hex_string_to_bit_matrix(hex_string: str) -&gt; list[list[str]]:
-    bytes_data = bytes.fromhex(hex_string)
-    bit_matrix = []
-    for byte in bytes_data:
-        bits = list(f&quot;{byte:08b}&quot;)
-        bit_matrix.append(bits)
-    return bit_matrix
-</code></pre>
-<h1 id="result">Result</h1>
+I wrote a Python script that:</p>
+<ol>
+<li>Takes any ASCII string</li>
+<li>Uses a custom 5×7 bitmapped font</li>
+<li>Renders each character into a binary matrix</li>
+<li>Concatenates rows into bytes</li>
+<li>Outputs a hex string (or Base64) that can be embedded in web demos</li>
+</ol>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hex_string_to_bit_matrix()</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Example snippet from `hex_string_to_bit_matrix`</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">hex_string_to_bit_matrix</span><span class="p">(</span><span class="n">hex_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="n">bytes_data</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">hex_string</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">bit_matrix</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">bytes_data</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="n">bits</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">byte</span><span class="si">:</span><span class="s2">08b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="n">bit_matrix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="k">return</span> <span class="n">bit_matrix</span>
+</code></pre></div></td></tr></table></div>
+<h1 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h1>
 <ul>
 <li>This is a custom bitmap font representation of the input text.</li>
 <li>Use this to create/decode messages for CTF like chanllenges.</li>
@@ -425,7 +434,7 @@ def hex_string_to_bit_matrix(hex_string: str) -&gt; list[list[str]]:
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
